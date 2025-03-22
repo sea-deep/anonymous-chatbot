@@ -14,7 +14,7 @@ export default {
             await ctx.telegram.sendMessage(partner, "Your partner has ended the chat!\nUse /search to start a new chat.");
             return ctx.reply("You ended the chat.\n\nUse /search to start a new chat.");
         } else {
-            return ctx.reply("You are not in a chat...");
+            return ctx.reply("You are not in a chat. Use /search to find a chat partner.");
         }
     }
 }

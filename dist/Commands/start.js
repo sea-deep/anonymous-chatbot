@@ -14,6 +14,6 @@ exports.default = {
     description: "Start the bot",
     execute: (ctx, bot) => __awaiter(void 0, void 0, void 0, function* () {
         var _a;
-        yield ctx.reply(`Hello ${(_a = ctx.from) === null || _a === void 0 ? void 0 : _a.first_name}!\n\nUse /search to start a new chat.\nUse /help to see the available commands.`);
+        yield ctx.reply(`Hello @${(_a = ctx.from) === null || _a === void 0 ? void 0 : _a.username}!\n\nUse /search to start a new chat.\nUse /help to see the available commands.`);
     })
 };
