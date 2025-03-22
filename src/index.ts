@@ -4,10 +4,10 @@ dotenv.config();
 import { Context, Telegraf } from "telegraf";
 
 export class ExtraTelegraf extends Telegraf<Context> {
-    waiting: number | null = null;
-    runningChats: Array<number> = [];
-    messageMap: Map<number, { [key: number]: number }> = new Map();
-    getPartner(id: number) {
+    waiting: number | null = null; // id
+    runningChats: Array<number> = []; // [id1, id2, id3, id4, ...]
+    messageMap: Map<number, { [key: number]: number }> = new Map(); // This map is used to map the message id of the users and the messages sent by the bot
+    getPartner(id: number) { // id1 -> id2, id2 -> id1
         let index = this.runningChats.indexOf(id);
         if (index % 2 === 0) {
             return this.runningChats[index + 1];
