@@ -1,13 +1,13 @@
 {
-  "name": "telegram-bot-template",
+  "name": "anonymous-chatbot",
   "version": "1.0.0",
-  "description": "A simple template for creating a Telegram bots using Telegraf",
+  "description": "An anonymous chatbot built using Telegraf",
   "keywords": [
-    "reef",
+    "anonymous",
     "telegram",
     "telegraf"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "author": "sea-deep",
   "type": "commonjs",
   "main": "dist/index.js",

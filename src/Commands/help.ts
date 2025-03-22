@@ -1,4 +1,4 @@
-import { Context, Markup, Telegraf } from "telegraf";
+import { Context, Telegraf } from "telegraf";
 import { Command } from "../Utils/commandHandler";
 import { glob } from "glob";
 import { pathToFileURL } from "node:url";
