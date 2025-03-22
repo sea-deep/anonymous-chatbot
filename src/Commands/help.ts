@@ -23,7 +23,7 @@ loadCommands();
 
 export default {
     name: "help",
-    description: "Show the available commands",
+    description: "See the available commands",
     execute: async (ctx: Context, bot: Telegraf<Context>) => {
         await ctx.replyWithMarkdownV2("__*Here are the available commands:*__\n\n" + commands.map((command: any) => `/${command.name} \\- ${command.description}`).join("\n"), removeKeyboard());
     }
