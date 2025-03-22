@@ -33,15 +33,32 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.bot = void 0;
+exports.bot = exports.ExtraTelegraf = void 0;
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const telegraf_1 = require("telegraf");
-exports.bot = new telegraf_1.Telegraf(process.env.BOT_TOKEN);
+class ExtraTelegraf extends telegraf_1.Telegraf {
+    constructor() {
+        super(...arguments);
+        this.waiting = null;
+        this.runningChats = [];
+        this.messageMap = new Map();
+    }
+    getPartner(id) {
+        let index = this.runningChats.indexOf(id);
+        if (index % 2 === 0) {
+            return this.runningChats[index + 1];
+        }
+        else {
+            return this.runningChats[index - 1];
+        }
+    }
+}
+exports.ExtraTelegraf = ExtraTelegraf;
+exports.bot = new ExtraTelegraf(process.env.BOT_TOKEN);
 import("./Utils/commandHandler.js");
 import("./Utils/eventHandler.js");
 import("./Utils/actionHandler.js");
-import("./Utils/textHandler.js");
 console.log("[INFO] - Bot is online");
 exports.bot.launch();
 process.once('SIGINT', () => exports.bot.stop('SIGINT'));

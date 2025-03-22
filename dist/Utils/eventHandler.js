@@ -28,8 +28,6 @@ function loadEvents() {
                 try {
                     index_1.bot.on(eventType, (ctx) => __awaiter(this, void 0, void 0, function* () {
                         try {
-                            if (ctx.text == "🏠 Hello")
-                                return;
                             yield event.execute(ctx, index_1.bot);
                         }
                         catch (error) {
