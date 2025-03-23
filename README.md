@@ -32,21 +32,14 @@ To host the bot yourself, follow these steps:
     ```sh
     npm install
     ```
-
-3. **Set up environment variables**:
-    Create a `.env` file in the root directory and add your Telegram bot token:
-    ```env
-    BOT_TOKEN=your-telegram-bot-token
-    ```
-
-4. **Build the project**:
+3. **Rename the .env.example file to .env and fill the required tokens:
     ```sh
-    npm run build
+    touch .env.example
     ```
 
 5. **Start the bot**:
     ```sh
-    npm start
+    node .
     ```
 
 ## Template Repository
